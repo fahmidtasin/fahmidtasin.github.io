@@ -205,7 +205,58 @@ footer {
     
     setInterval(timeLoop, 1000);
     
+	
+	function modal() {
+			
+			var overlay = document.createElement("div");
+			overlay.style.position = "absolute";
+			overlay.style.width = "100%";
+			overlay.style.height = "100%";
+			overlay.style.top = "0";
+			overlay.style.left = "0";
+			overlay.style.background = "rgba(0,0,0,.5)";
+			
+			document.body.appendChild(overlay);
 
+
+			var main  = document.createElement("div");
+			main.style.width = "400px";
+			main.style.height = "200px";
+			main.style.background = "#ffaa00";
+			main.style.margin = "0 auto";
+			main.style.position = "relative";
+			main.style.top = "50%";
+			main.style.borderRadius = "3px";
+			main.style.padding = "15px";
+			main.style.transform = "translateY(-50%)";
+
+			overlay.appendChild(main);
+
+			var ttl = document.createElement("h3");
+
+			ttl.style.margin = "0";
+			ttl.paddingBottom = "15px";
+			ttl.innerHTML = "Modal Dialog";
+			main.appendChild(ttl);
+
+			var pr = document.createElement("p");
+			pr.innerHTML = "This Site is still in Construction!";
+			main.appendChild(pr);
+
+			var btn = document.createElement("input");
+			btn.setAttribute("type", "Button");
+			btn.setAttribute("value", "Dismiss");
+			btn.style.marginTop = "50px";
+			main.appendChild(btn);
+
+			btn.onclick = function(){
+
+				document.body.removeChild(overlay);
+
+			}
+
+		}
+  		modal();
   </script>
 
 </div>
