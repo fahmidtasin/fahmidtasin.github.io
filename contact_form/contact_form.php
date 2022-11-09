@@ -10,7 +10,7 @@ $errorMessage = 'There was an error while submitting the form. Please try again 
 
 // let's do the sending
 
-if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])):
+if(isset($_POST['g-recaptcha-response']) || !empty($_POST['g-recaptcha-response'])):
     //your site secret key
     $secret = '6LdqmCAUAAAAANONcPUkgVpTSGGqm60cabVMVaON';
     //get verify response data
