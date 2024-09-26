@@ -19,7 +19,7 @@
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
 
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
   <body oncontextmenu="return false;">
@@ -828,7 +828,11 @@
                       <i class="pe-7s-icon pe-7s-mail"></i>
                     </div>
                     <div class="ci-text">
-                      <h5>fahmidtasin@gmail.com</h5>
+                      <h5>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fahmidtasin@gmail.com" target="_blank" style="text-decoration: none; color: inherit;">
+                          fahmidtasin@gmail.com
+                        </a>
+                      </h5>
                     </div>
                   </div>
                   <div class="contact-info-block">
@@ -836,7 +840,7 @@
                       <i class="pe-7s-icon pe-7s-call"></i>
                     </div>
                     <div class="ci-text">
-                      <h5>+8801681161036</h5>
+                      <h5><a href="tel:+8801681161036" style="text-decoration: none; color: inherit;">+8801681161036</a></h5>
                     </div>
                   </div>
                   <div class="contact-info-block">
@@ -849,44 +853,119 @@
                       <h5>Freelance Available</h5>
                     </div>
                   </div>
+                  <div class="contact-info-block">
+                    <div class="ci-icon">
+                      <i class="pe-7s-icon pe-7s-check"></i>
+<!--                      <i class="pe-7s-icon pe-7s-close-circle"></i>-->
+
+                    </div>
+                    <div class="ci-text">
+                      <h5>Seeking for a Job</h5>
+                    </div>
+                  </div>
+
                 </div>
 
+<!--Form Part Start-->
                 <div class="col-sm-6 col-md-6 subpage-block">
                   <div class="block-title">
                     <h3>Contact Form</h3>
                   </div>
-                  <form id="contact-form" method="post" action="contact_form/contact_form.php">
-
+                  <form id="contact-form" onsubmit="sendEmail(event)">
                     <div class="messages"></div>
-
                     <div class="controls">
                       <div class="form-group">
-                          <input id="form_name" type="text" name="name" class="form-control" placeholder="Full Name" required="required" data-error="Name is required.">
-                          <div class="form-control-border"></div>
-                          <i class="form-control-icon fa fa-user"></i>
-                          <div class="help-block with-errors"></div>
+                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Your Full Name" required="required" data-error="Name is required.">
+                        <div class="form-control-border"></div>
+                        <i class="form-control-icon fa fa-user"></i>
+                        <div class="help-block with-errors"></div>
                       </div>
-
                       <div class="form-group">
-                          <input id="form_email" type="email" name="email" class="form-control" placeholder="Email Address" required="required" data-error="Valid email is required.">
-                          <div class="form-control-border"></div>
-                          <i class="form-control-icon fa fa-envelope"></i>
-                          <div class="help-block with-errors"></div>
+                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Your Email Address" required="required" data-error="Valid email is required.">
+                        <div class="form-control-border"></div>
+                        <i class="form-control-icon fa fa-envelope"></i>
+                        <div class="help-block with-errors"></div>
                       </div>
-
                       <div class="form-group">
-                          <textarea id="form_message" name="message" class="form-control" placeholder="Message for me" rows="4" required="required" data-error="Please, leave me a message."></textarea>
-                          <div class="form-control-border"></div>
-                          <i class="form-control-icon fa fa-comment"></i>
-                          <div class="help-block with-errors"></div>
+                        <textarea id="form_message" name="message" class="form-control" placeholder="Message for me" rows="4" required="required" data-error="Please, leave me a message."></textarea>
+                        <div class="form-control-border"></div>
+                        <i class="form-control-icon fa fa-comment"></i>
+                        <div class="help-block with-errors"></div>
                       </div>
 
-                     <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-callback="correctCaptcha"></div>
+                      <!-- Random Math Problem Section -->
+                      <div class="form-group">
+                        <label id="math-problem"></label>
+                        <input type="text" id="math-answer" class="form-control" placeholder="Your answer" required="required" data-error="Please, solve the problem.">
+                      </div>
 
                       <input type="submit" class="button btn-send" value="Send message">
                     </div>
                   </form>
                 </div>
+
+                <script>
+                  let correctAnswer;
+
+                  function generateMathProblem() {
+                    const num1 = Math.floor(Math.random() * 10) + 1; // Random number between 1-10
+                    const num2 = Math.floor(Math.random() * 10) + 1; // Random number between 1-10
+                    const operation = Math.random() < 0.5 ? '+' : '-'; // Randomly choose + or -
+
+                    correctAnswer = operation === '+' ? num1 + num2 : num1 - num2; // Calculate correct answer
+
+                    document.getElementById('math-problem').innerText = `What is ${num1} ${operation} ${num2}?`;
+                  }
+
+                  // Call function to generate a math problem on page load
+                  generateMathProblem();
+
+                  function sendEmail(event) {
+                    event.preventDefault();
+
+                    // Get form values
+                    var name = document.getElementById('form_name').value.trim();
+                    var email = document.getElementById('form_email').value.trim();
+                    var message = document.getElementById('form_message').value.trim();
+                    var userAnswer = parseInt(document.getElementById('math-answer').value.trim(), 10);
+
+                    // Validate inputs
+                    if (name.length < 8) {
+                      alert('Name must be at least 8 characters long.');
+                      return;
+                    }
+
+                    // Regular expression for basic email validation
+                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                      alert('Please enter a valid email address.');
+                      return;
+                    }
+
+                    if (message.length < 8) {
+                      alert('Message must be at least 8 characters long.');
+                      return;
+                    }
+
+                    // Validate math answer
+                    if (userAnswer !== correctAnswer) {
+                      alert('Incorrect answer to the math problem. Please try again.');
+                      generateMathProblem(); // Generate a new problem if the answer is incorrect
+                      return;
+                    }
+
+                    // Prepare Gmail URL
+                    var mailtoLink = 'https://mail.google.com/mail/?view=cm&fs=1&to=fahmidtasin@gmail.com&su=Message from '
+                            + encodeURIComponent(name) + '&body=Name: ' + encodeURIComponent(name)
+                            + '%0AEmail: ' + encodeURIComponent(email)
+                            + '%0A%0AMessage: ' + encodeURIComponent(message);
+
+                    // Open Gmail compose window
+                    window.open(mailtoLink, '_blank');
+                  }
+                </script>
+<!--Form Part End-->
+
               </div>
             </section>
             <!-- End Contact Subpage -->
