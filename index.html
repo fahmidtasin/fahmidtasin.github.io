@@ -2,12 +2,28 @@
 <html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <title>Fahmid Shafath Tasin</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fahmid Shafath Tasin | Software Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Portfolio" />
-    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="description" content="Fahmid Shafath Tasin — Software Engineer specializing in PHP, Laravel, React, and IT Operations. View my portfolio, resume, and get in touch." />
+    <meta name="theme-color" content="#1c1c1c">
+    <meta name="robots" content="index, follow">
 
+    <!-- Open Graph / Social sharing -->
+    <meta property="og:title" content="Fahmid Shafath Tasin | Software Engineer">
+    <meta property="og:description" content="Software Engineer specializing in PHP, Laravel, React, and IT Operations.">
+    <meta property="og:image" content="images/profile-pic.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fahmidtasin.github.io/">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="canonical" href="https://fahmidtasin.github.io/">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Preconnect to speed up third-party requests -->
+    <link rel="preconnect" href="https://www.google.com">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/transition-animations.css">
@@ -22,23 +38,12 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
-  <body oncontextmenu="return false;">
-    <!-- Loading animation -->
-<!--    <div class="preloader">-->
-<!--      <div class="preloader-animation">-->
-<!--        <div class="dot1"></div>-->
-<!--        <div class="dot2"></div>-->
-<!--      </div>-->
-<!--    </div>-->
-    <!-- /Loading animation -->
-
-<!--    <marquee class="bg-danger"><h1>This Site is in Under Development...</h1></marquee>-->
+  <body>
     <div id="page" class="page">
       <!-- Header -->
       <header id="site_header" class="header">
         <div class="my-photo">
-<!--          <img src="images/my_photo.jpg" alt="image">-->
-          <img src="images/profile-pic.jpg" alt="image">
+          <img src="images/profile-pic.jpg" alt="Fahmid Shafath Tasin" width="150" height="150">
           <div class="mask"></div>
         </div>
 
@@ -47,7 +52,7 @@
           <p class="site-description bg-success">Software Engineer | IT Operations & Support</p>
         </div>
 
-        <a class="menu-toggle mobile-visible">
+        <a class="menu-toggle mobile-visible" href="#" aria-label="Toggle menu">
           <i class="fa fa-bars"></i>
         </a>
       </header>
@@ -61,20 +66,12 @@
           <div class="site-nav mobile-menu-hide">
             <!-- Main menu -->
             <ul id="nav" class="site-main-menu">
-              <!-- About Me Subpage link -->
               <li>
-                <a class="pt-trigger" href="#about_me" data-animation="58" data-goto="1">About me</a><!-- href value = data-id without # of .pt-page -->
+                <a class="pt-trigger" href="#about_me" data-animation="58" data-goto="1">About me</a>
               </li>
-              <!-- /About Me Subpage link -->
               <li>
                 <a class="pt-trigger" href="#resume" data-animation="59" data-goto="2">Resume</a>
               </li>
-              <!-- <li>
-                <a class="pt-trigger" href="#portfolio" data-animation="60" data-goto="3">Portfolio</a>
-              </li> -->
-              <!-- <li>
-                <a class="pt-trigger" href="#blog" data-animation="61" data-goto="4">Blog</a>
-              </li> -->
               <li>
                 <a class="pt-trigger" href="#contact" data-animation="58" data-goto="5">Contact</a>
               </li>
@@ -83,12 +80,8 @@
 
             <!-- Social buttons -->
             <ul class="social-links">
-              <li><a class="tip social-button" href="https://github.com/fahmidtasin" title="Github" target="_blank"><i class="fa fa-github"></i></a></li> <!-- Full list of social icons: http://fontawesome.io/icons/#brand -->
-              <li><a class="tip social-button" href="https://bd.linkedin.com/in/fahmid-shafath-tasin-27391619a" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-<!--              <li><a class="tip social-button" href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>-->
-              <!--<li><a class="tip social-button" href="#" title="Youtube"><i class="fa fa-youtube"></i></a></li>-->
-              <!--<li><a class="tip social-button" href="#" title="last.fm"><i class="fa fa-lastfm"></i></a></li>-->
-              <!--<li><a class="tip social-button" href="#" title="Dribbble"><i class="fa fa-dribbble"></i></a></li>-->
+              <li><a class="tip social-button" href="https://github.com/fahmidtasin" title="Github" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a></li>
+              <li><a class="tip social-button" href="https://bd.linkedin.com/in/fahmid-shafath-tasin-27391619a" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
             </ul>
             <!-- /Social buttons -->
           </div>
@@ -106,169 +99,63 @@
               <div class="row">
                 <div class="col-sm-12 col-md-12 mobile-visible subpage-block">
                   <div class="my-photo-small">
-                    <img src="images/photo_small.jpg" alt="image">
+                    <img src="images/photo_small.jpg" alt="Fahmid Shafath Tasin" loading="lazy">
                   </div>
                 </div>
                 <div class="col-sm-12 col-md-12 subpage-block text-center">
-            <div class="general-info">
-              <h3>Software Engineer</h3>
-              <p>Hello!<br>
-              I'm <b>Fahmid Shafath Tasin</b>, a dedicated Software Engineer with expertise in C, C++, Python, Java, PHP, and JavaScript (React, Laravel).<br>
-              I specialize in delivering high-quality software solutions, ensuring timely project completion, and exceeding client expectations through commitment and problem-solving skills.</p>
-              <p>In addition to software development, I have experience with IT operations, system support, database management (MySQL, MongoDB), API integration, and software testing, enhancing my technical versatility and adaptability.</p>
-            </div>
-          </div>
-
-
-                <!--<div class="col-sm-4 col-md-4 subpage-block">
-                  <div class="block end">
-                    <ul class="info-list">
-                      <li><span class="title">Name</span><span class="value">Alex Smith</span></li>
-                      <li><span class="title">Age</span><span class="value">29</span></li>
-                      <li><span class="title">Address</span><span class="value">88 Street - State, Town</span></li>
-                      <li><span class="title">e-mail</span><span class="value"><a href="mailto:email@addres.com">email@addres.com</a></span></li>
-                      <li><span class="title">Phone</span><span class="value">+0123 123 456 789</span></li>
-                      <li><span class="title">Freelance</span><span class="value available">Available</span></li>
-                    </ul>
+                  <div class="general-info">
+                    <h3>Software Engineer</h3>
+                    <p>Hello!<br>
+                    I'm <b>Fahmid Shafath Tasin</b>, a dedicated Software Engineer with expertise in C, C++, Python, Java, PHP, and JavaScript (React, Laravel).<br>
+                    I specialize in delivering high-quality software solutions, ensuring timely project completion, and exceeding client expectations through commitment and problem-solving skills.</p>
+                    <p>In addition to software development, I have experience with IT operations, system support, database management (MySQL, MongoDB), API integration, and software testing, enhancing my technical versatility and adaptability.</p>
                   </div>
-                </div>-->
+                </div>
 
-          
+                <!-- Services block -->
+                <div class="block-title">
+                  <h3>Services</h3>
+                </div>
 
-              <!-- Services block -->
-              <div class="block-title">
-                <h3>Services</h3>
+                <div class="row">
+                  <div class="col-sm-6 col-md-3 subpage-block">
+                    <div class="service-block">
+                      <div class="service-info">
+                        <img src="images/service/web_design.png" alt="Web Development" loading="lazy">
+                        <h4>Web Development</h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3 subpage-block">
+                    <div class="service-block">
+                      <div class="service-info">
+                        <img src="images/service/copywrite.png" alt="Documentation" loading="lazy">
+                        <h4>Documentation</h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3 subpage-block">
+                    <div class="service-block">
+                      <div class="service-info">
+                        <img src="images/service/ecommerce.png" alt="E-Commerce" loading="lazy">
+                        <h4>E-Commerce</h4>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3 subpage-block">
+                    <div class="service-block">
+                      <div class="service-info">
+                        <img src="images/service/management.png" alt="Management" loading="lazy">
+                        <h4>Management & Monitoring</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Services block -->
               </div>
-
-              <div class="row">
-                <div class="col-sm-6 col-md-3 subpage-block">
-                  <div class="service-block"> 
-                    <div class="service-info">
-                      <img src="images/service/web_design.png" alt="Responsive Design">
-                      <h4>Web Development</h4>
-<!--                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>-->
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 subpage-block">
-                  <div class="service-block"> 
-                    <div class="service-info">
-                      <img src="images/service/copywrite.png" alt="Copywriter">
-                      <h4>Documentation</h4>
-<!--                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>-->
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 subpage-block">
-                  <div class="service-block"> 
-                    <div class="service-info">
-                      <img src="images/service/ecommerce.png" alt="E-Commerce">
-                      <h4>E-Commerce</h4>
-<!--                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>-->
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 subpage-block">
-                  <div class="service-block"> 
-                    <div class="service-info">
-                      <img src="images/service/management.png" alt="Management">
-                      <h4>Management & Monitoring</h4>
-<!--                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>-->
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End of Services block -->
-
-<!--              &lt;!&ndash; Clients block &ndash;&gt;-->
-<!--              <div class="block-title">-->
-<!--                <h3>Clients</h3>-->
-<!--              </div>-->
-
-<!--              <div class="row">-->
-<!--                <div class="col-sm-4 col-md-2 subpage-block">-->
-<!--                  <div class="client_block">-->
-<!--                    <a href="#" target="_blank"><img src="images/clients/client_1.png" alt="image"></a>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-sm-4 col-md-2 subpage-block">-->
-<!--                  <div class="client_block">-->
-<!--                    <a href="#" target="_blank"><img src="images/clients/client_2.png" alt="image"></a>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-sm-4 col-md-2 subpage-block">-->
-<!--                  <div class="client_block">-->
-<!--                    <a href="#" target="_blank"><img src="images/clients/client_3.png" alt="image"></a>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-sm-4 col-md-2 subpage-block">-->
-<!--                  <div class="client_block">-->
-<!--                    <a href="#" target="_blank"><img src="images/clients/client_4.png" alt="image"></a>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-sm-4 col-md-2 subpage-block">-->
-<!--                  <div class="client_block">-->
-<!--                    <a href="#" target="_blank"><img src="images/clients/client_5.png" alt="image"></a>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-sm-4 col-md-2 subpage-block">-->
-<!--                  <div class="client_block">-->
-<!--                    <a href="#" target="_blank"><img src="images/clients/client_6.png" alt="image"></a>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              &lt;!&ndash; End of Clients block &ndash;&gt;-->
-
-
-
-<!--              &lt;!&ndash; Fun facts block &ndash;&gt;-->
-<!--              <div class="block-title">-->
-<!--                <h3>Fun Facts</h3>-->
-<!--              </div>-->
-
-<!--              <div class="row">-->
-<!--                <div class="col-sm-6 col-md-3 subpage-block">-->
-<!--                  <div class="fun-fact-block gray-bg"> -->
-<!--                    <i class="pe-7s-icon pe-7s-smile"></i>-->
-<!--                    <h4>Happy Clients</h4>-->
-<!--                    <span class="fun-value">0</span>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-sm-6 col-md-3 subpage-block">-->
-<!--                  <div class="fun-fact-block"> -->
-<!--                    <i class="pe-7s-icon pe-7s-alarm"></i>-->
-<!--                    <h4>Working Hours</h4>-->
-<!--                    <span class="fun-value">0</span>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-sm-6 col-md-3 subpage-block">-->
-<!--                  <div class="fun-fact-block gray-bg"> -->
-<!--                    <i class="pe-7s-icon pe-7s-medal"></i>-->
-<!--                    <h4>Awards Won</h4>-->
-<!--                    <span class="fun-value">0</span>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-sm-6 col-md-3 subpage-block">-->
-<!--                  <div class="fun-fact-block"> -->
-<!--                    <i class="pe-7s-icon pe-7s-coffee"></i>-->
-<!--                    <h4>Coffee Consumed</h4>-->
-<!--                    <span class="fun-value">0</span>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              &lt;!&ndash; End of Fun fucts block &ndash;&gt;-->
-
             </section>
             <!-- End of About Me Subpage -->
 
@@ -285,17 +172,13 @@
                     <h3>Education</h3>
                   </div>
                   <div class="timeline">
-
-                    <!-- Single event -->
                     <div class="timeline-event te-primary">
                       <h5 class="event-date">2020</h5>
                       <h4 class="event-name">Computer Science And Engineering</h4>
                       <span class="event-description">Software Engineering</span>
                       <p>United International University</p>
                     </div>
-                    
-                  
-                    <!-- Single event -->
+
                     <div class="timeline-event te-primary">
                       <h5 class="event-date">2013</h5>
                       <h4 class="event-name">HSC</h4>
@@ -303,14 +186,12 @@
                       <p>Monipur High School and College</p>
                     </div>
 
-                     <!-- Single event -->
-                     <div class="timeline-event te-primary">
+                    <div class="timeline-event te-primary">
                       <h5 class="event-date">2011</h5>
                       <h4 class="event-name">SSC</h4>
                       <span class="event-description">Science</span>
                       <p>School Of Development Alternative (SODA)</p>
                     </div>
-                    
                   </div>
                 </div>
 
@@ -322,24 +203,21 @@
                     <div class="block-title">
                       <h3>Experience</h3>
                     </div>
-                    
-                   <!-- Single event -->
+
                     <div class="timeline-event te-primary">
                       <h5 class="event-date">JAN 2026-Present</h5>
                       <h4 class="event-name">Software Developer</h4>
                       <span class="event-description">ERP Development & Maintenance with PHP</span>
                       <p>Neways International Company</p>
                     </div>
-                    
-                    <!-- Single event -->
+
                     <div class="timeline-event te-primary">
                       <h5 class="event-date">OCT 2022-DEC 2023</h5>
                       <h4 class="event-name">Junior Software Engineer</h4>
                       <span class="event-description">Web Development with Ruby on Rails & PHP with Laravel Framework</span>
                       <p>DYMICBIT</p>
                     </div>
-                    
-                    <!-- Single event -->
+
                     <div class="timeline-event te-primary">
                       <h5 class="event-date">FEB 2021- SEP 2022, JAN 2024 - Present</h5>
                       <h4 class="event-name">IT Executive</h4>
@@ -357,23 +235,20 @@
                       <span class="event-description">HTML5, CSS3, JavaScript, jQuery, PSD TO HTML</span>
                       <p>TrendUp IT</p>
                     </div>
-                    
-                    <!-- Single event -->
+
                     <div class="timeline-event te-primary">
                       <h5 class="event-date">2022</h5>
                       <h4 class="event-name">Web Development - PHP with Laravel Framework</h4>
                       <span class="event-description">HTML5, CSS3, JavaScript, jQuery, Ajax, Raw PHP, SQL, Laravel Framework</span>
                       <p>BASIS-BITM</p>
                     </div>
-                    
-                    <!-- Single event -->
+
                     <div class="timeline-event te-primary">
                       <h5 class="event-date">2018</h5>
                       <h4 class="event-name">Web Development</h4>
                       <span class="event-description">HTML, CSS, JavaScript, PHP, SQL</span>
                       <p>US Software Ltd.</p>
                     </div>
-                    
                   </div>
                 </div>
 
@@ -382,7 +257,7 @@
                     <h3>Design Skills</h3>
                   </div>
                   <div class="skills-info">
-                    <h4>Web Design</h4>                               
+                    <h4>Web Design</h4>
                     <div class="skill-container">
                       <div class="skill-percentage skill-1"></div>
                     </div>
@@ -395,14 +270,14 @@
                     <h4>Print Design</h4>
                     <div class="skill-container">
                       <div class="skill-percentage skill-3"></div>
-                    </div> 
+                    </div>
                   </div>
 
                   <div class="block-title">
                     <h3>Coding Skills</h3>
                   </div>
                   <div class="skills-info">
-                    <h4>HML5</h4>                               
+                    <h4>HTML5</h4>
                     <div class="skill-container">
                       <div class="skill-percentage skill-4"></div>
                     </div>
@@ -417,7 +292,7 @@
                       <div class="skill-percentage skill-10"></div>
                     </div>
 
-                     <h4>JavaScript</h4>
+                    <h4>JavaScript</h4>
                     <div class="skill-container">
                       <div class="skill-percentage skill-10"></div>
                     </div>
@@ -432,7 +307,7 @@
                       <div class="skill-percentage skill-8"></div>
                     </div>
 
-                     <h4>LARAVEL</h4>
+                    <h4>LARAVEL</h4>
                     <div class="skill-container">
                       <div class="skill-percentage skill-10"></div>
                     </div>
@@ -447,13 +322,12 @@
               <div class="row">
                 <div class="col-sm-12 col-md-12">
                   <div class="download-cv-block">
-                    <a class="button" target="_blank" href="CV/Fahmid_Shafath_Tasin_CV.pdf">View Personalized Resume</a>
+                    <a class="button" target="_blank" rel="noopener noreferrer" href="CV/Fahmid_Shafath_Tasin_CV.pdf">View Personalized Resume</a>
                   </div>
                 </div>
               </div>
             </section>
             <!-- End Resume Subpage -->
-
 
             <!-- Portfolio Subpage -->
             <section class="pt-page pt-page-3" data-id="portfolio">
@@ -462,10 +336,7 @@
                 <h5 class="section-description">My Best Works</h5>
               </div>
 
-              <!-- Portfolio Content -->
               <div class="portfolio-content">
-                            
-                <!-- Portfolio filter -->
                 <ul id="portfolio_filters" class="portfolio-filters">
                   <li class="active">
                     <a class="filter btn btn-sm btn-link active" data-group="all">All</a>
@@ -480,15 +351,11 @@
                     <a class="filter btn btn-sm btn-link" data-group="video">Video</a>
                   </li>
                 </ul>
-                <!-- End of Portfolio filter -->
 
-                <!-- Portfolio Grid -->
                 <div id="portfolio_grid" class="portfolio-grid portfolio-masonry masonry-grid-3">
-
-                  <!-- Portfolio Item 1 -->
                   <figure class="item" data-groups='["all", "media"]'>
                     <a class="ajax-page-load" href="portfolio-1.html">
-                      <img src="images/portfolio/1.jpg" alt="">
+                      <img src="images/portfolio/1.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Media</small>
@@ -496,12 +363,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 1 -->
 
-                  <!-- Portfolio Item 2 -->
                   <figure class="item" data-groups='["all", "video"]'>
-                    <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Praesent Dolor Ex" class="lightbox mfp-iframe">
-                      <img src="images/portfolio/2.jpg" alt="">
+                    <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Praesent Dolor Ex" class="lightbox mfp-iframe" rel="noopener noreferrer">
+                      <img src="images/portfolio/2.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Video</small>
@@ -509,12 +374,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 2 -->
 
-                  <!-- Portfolio Item 3 -->
                   <figure class="item" data-groups='["all","illustration"]'>
                     <a href="images/portfolio/3.jpg" class="lightbox" title="Duis Eu Eros Viverra">
-                      <img src="images/portfolio/3.jpg" alt="">
+                      <img src="images/portfolio/3.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Illustration</small>
@@ -522,12 +385,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 3 -->
 
-                  <!-- Portfolio Item 4 -->
                   <figure class="item" data-groups='["all", "media"]'>
                     <a class="ajax-page-load" href="portfolio-1.html">
-                      <img src="images/portfolio/4.jpg" alt="">
+                      <img src="images/portfolio/4.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Media</small>
@@ -535,12 +396,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 4 -->
 
-                  <!-- Portfolio Item 5 -->
                   <figure class="item" data-groups='["all", "illustration"]'>
                     <a href="images/portfolio/5.jpg" class="lightbox" title="Aliquam Condimentum Magna Rhoncus">
-                      <img src="images/portfolio/5.jpg" alt="">
+                      <img src="images/portfolio/5.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Illustration</small>
@@ -548,12 +407,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 5 -->
 
-                  <!-- Portfolio Item 6 -->
                   <figure class="item" data-groups='["all", "media"]'>
                     <a class="ajax-page-load" href="portfolio-1.html">
-                      <img src="images/portfolio/6.jpg" alt="">
+                      <img src="images/portfolio/6.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Media</small>
@@ -561,12 +418,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 6 -->
 
-                  <!-- Portfolio Item 7 -->
                   <figure class="item" data-groups='["all", "video"]'>
-                    <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Nulla Facilisi" class="lightbox mfp-iframe">
-                      <img src="images/portfolio/7.jpg" alt="">
+                    <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Nulla Facilisi" class="lightbox mfp-iframe" rel="noopener noreferrer">
+                      <img src="images/portfolio/7.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Video</small>
@@ -574,12 +429,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 7 -->
 
-                  <!-- Portfolio Item 8 -->
                   <figure class="item" data-groups='["all",  "media"]'>
                     <a class="ajax-page-load" href="portfolio-1.html">
-                      <img src="images/portfolio/8.jpg" alt="">
+                      <img src="images/portfolio/8.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Media</small>
@@ -587,12 +440,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 8 -->
 
-                  <!-- Portfolio Item 9 -->
                   <figure class="item" data-groups='["all","illustration"]'>
                     <a href="images/portfolio/9.jpg" class="lightbox" title="Mauris Neque Dolor">
-                      <img src="images/portfolio/9.jpg" alt="">
+                      <img src="images/portfolio/9.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Illustration</small>
@@ -600,12 +451,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 9 -->
 
-                  <!-- Portfolio Item 10 -->
                   <figure class="item" data-groups='["all", "video"]'>
-                    <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Donec Lectus Arcu" class="lightbox mfp-iframe">
-                      <img src="images/portfolio/10.jpg" alt="">
+                    <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Donec Lectus Arcu" class="lightbox mfp-iframe" rel="noopener noreferrer">
+                      <img src="images/portfolio/10.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Video</small>
@@ -613,12 +462,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 10 -->
 
-                  <!-- Portfolio Item 11 -->
                   <figure class="item" data-groups='["all","illustration"]'>
                     <a href="images/portfolio/11.jpg" class="lightbox" title="Duis Eu Eros Viverra">
-                      <img src="images/portfolio/11.jpg" alt="">
+                      <img src="images/portfolio/11.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Illustration</small>
@@ -626,12 +473,10 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 11 -->
 
-                  <!-- Portfolio Item 12 -->
                   <figure class="item" data-groups='["all","media"]'>
                     <a class="ajax-page-load" href="portfolio-1.html">
-                      <img src="images/portfolio/12.jpg" alt="">
+                      <img src="images/portfolio/12.jpg" alt="Project Name" loading="lazy">
                       <div>
                         <h5 class="name">Project Name</h5>
                         <small>Media</small>
@@ -639,13 +484,8 @@
                       </div>
                     </a>
                   </figure>
-                  <!-- /Portfolio Item 12 -->
                 </div>
-                <!-- /Portfolio Grid -->
-
               </div>
-              <!-- /Portfolio Content -->
-
             </section>
             <!-- /Portfolio Subpage -->
 
@@ -656,14 +496,13 @@
                 <h5 class="section-description">My Diary</h5>
               </div>
               <div class="blog-masonry">
-                <!-- Blog Post 1 -->
                 <div class="item">
                   <div class="blog-card">
                     <div class="media-block">
                       <a href="blog-post-1.html">
-                        <img class="post-image img-responsive" src="images/blog/blog_post_1.jpg" alt="blog-post-1" />
+                        <img class="post-image img-responsive" src="images/blog/blog_post_1.jpg" alt="blog-post-1" loading="lazy" />
                         <div class="mask"></div>
-                        <div class="post-date"><span class="day">6</span><span class="month">Dec</span><!--<span class="year">2016</span>--></div>
+                        <div class="post-date"><span class="day">6</span><span class="month">Dec</span></div>
                       </a>
                     </div>
                     <div class="post-info">
@@ -674,16 +513,14 @@
                     </div>
                   </div>
                 </div>
-                <!-- End of Blog Post 1 -->
 
-                <!-- Blog Post 2 -->
                 <div class="item">
                   <div class="blog-card">
                     <div class="media-block">
                       <a href="blog-post-1.html">
-                        <img class="post-image img-responsive" src="images/blog/blog_post_2.jpg" alt="blog-post-2" />
+                        <img class="post-image img-responsive" src="images/blog/blog_post_2.jpg" alt="blog-post-2" loading="lazy" />
                         <div class="mask"></div>
-                        <div class="post-date"><span class="day">3</span><span class="month">Nov</span><!--<span class="year">2016</span>--></div>
+                        <div class="post-date"><span class="day">3</span><span class="month">Nov</span></div>
                       </a>
                     </div>
                     <div class="post-info">
@@ -694,16 +531,14 @@
                     </div>
                   </div>
                 </div>
-                <!-- End of Blog Post 2 -->
 
-                <!-- Blog Post 3 -->
                 <div class="item">
                   <div class="blog-card">
                     <div class="media-block">
                       <a href="blog-post-1.html">
-                        <img class="post-image img-responsive" src="images/blog/blog_post_3.jpg" alt="blog-post-3" />
+                        <img class="post-image img-responsive" src="images/blog/blog_post_3.jpg" alt="blog-post-3" loading="lazy" />
                         <div class="mask"></div>
-                        <div class="post-date"><span class="day">12</span><span class="month">Oct</span><!--<span class="year">2016</span>--></div>
+                        <div class="post-date"><span class="day">12</span><span class="month">Oct</span></div>
                       </a>
                     </div>
                     <div class="post-info">
@@ -714,16 +549,14 @@
                     </div>
                   </div>
                 </div>
-                <!-- End of Blog Post 3 -->
 
-                <!-- Blog Post 4 -->
                 <div class="item">
                   <div class="blog-card">
                     <div class="media-block">
                       <a href="blog-post-1.html">
-                        <img class="post-image img-responsive" src="images/blog/blog_post_4.jpg" alt="blog-post-4" />
+                        <img class="post-image img-responsive" src="images/blog/blog_post_4.jpg" alt="blog-post-4" loading="lazy" />
                         <div class="mask"></div>
-                        <div class="post-date"><span class="day">18</span><span class="month">Aug</span><!--<span class="year">2016</span>--></div>
+                        <div class="post-date"><span class="day">18</span><span class="month">Aug</span></div>
                       </a>
                     </div>
                     <div class="post-info">
@@ -734,19 +567,17 @@
                     </div>
                   </div>
                 </div>
-                <!-- End of Blog Post 4 -->
 
-                <!-- Blog Post 5 -->
                 <div class="item">
                   <div class="blog-card">
                     <div class="media-block">
                       <a href="blog-post-1.html">
-                        <img class="post-image img-responsive" src="images/blog/blog_post_5.jpg" alt="blog-post-5" />
+                        <img class="post-image img-responsive" src="images/blog/blog_post_5.jpg" alt="blog-post-5" loading="lazy" />
                         <div class="mask"></div>
-                        <div class="post-date"><span class="day">2</span><span class="month">Jul</span><!--<span class="year">2016</span>--></div>
+                        <div class="post-date"><span class="day">2</span><span class="month">Jul</span></div>
                       </a>
                     </div>
-                    <div class="post-info">                        
+                    <div class="post-info">
                       <ul class="category">
                         <li><a href="#">CSS3</a></li>
                       </ul>
@@ -754,16 +585,14 @@
                     </div>
                   </div>
                 </div>
-                <!-- End of Blog Post 5 -->
 
-                <!-- Blog Post 6 -->
                 <div class="item">
                   <div class="blog-card">
                     <div class="media-block">
                       <a href="blog-post-1.html">
-                        <img class="post-image img-responsive" src="images/blog/blog_post_6.jpg" alt="blog-post-6" />
+                        <img class="post-image img-responsive" src="images/blog/blog_post_6.jpg" alt="blog-post-6" loading="lazy" />
                         <div class="mask"></div>
-                        <div class="post-date"><span class="day">8</span><span class="month">May</span><!--<span class="year">2016</span>--></div>
+                        <div class="post-date"><span class="day">8</span><span class="month">May</span></div>
                       </a>
                     </div>
                     <div class="post-info">
@@ -774,16 +603,14 @@
                     </div>
                   </div>
                 </div>
-                <!-- End of Blog Post 6 -->
 
-                <!-- Blog Post 7 -->
                 <div class="item">
                   <div class="blog-card">
                     <div class="media-block">
                       <a href="blog-post-1.html">
-                        <img class="post-image img-responsive" src="images/blog/blog_post_7.jpg" alt="blog-post-7" />
+                        <img class="post-image img-responsive" src="images/blog/blog_post_7.jpg" alt="blog-post-7" loading="lazy" />
                         <div class="mask"></div>
-                        <div class="post-date"><span class="day">7</span><span class="month">Apr</span><!--<span class="year">2016</span>--></div>
+                        <div class="post-date"><span class="day">7</span><span class="month">Apr</span></div>
                       </a>
                     </div>
                     <div class="post-info">
@@ -794,16 +621,14 @@
                     </div>
                   </div>
                 </div>
-                <!-- End of Blog Post 7 -->
 
-                <!-- Blog Post 8 -->
                 <div class="item">
                   <div class="blog-card">
                     <div class="media-block">
                       <a href="blog-post-1.html">
-                        <img class="post-image img-responsive" src="images/blog/blog_post_8.jpg" alt="blog-post-8" />
+                        <img class="post-image img-responsive" src="images/blog/blog_post_8.jpg" alt="blog-post-8" loading="lazy" />
                         <div class="mask"></div>
-                        <div class="post-date"><span class="day">21</span><span class="month">Mar</span><!--<span class="year">2016</span>--></div>
+                        <div class="post-date"><span class="day">21</span><span class="month">Mar</span></div>
                       </a>
                     </div>
                     <div class="post-info">
@@ -814,7 +639,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- End of Blog Post 8 -->
               </div>
             </section>
             <!-- End Blog Subpage -->
@@ -845,7 +669,7 @@
                     </div>
                     <div class="ci-text">
                       <h5>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fahmid.dev@gmail.com" target="_blank" style="text-decoration: none; color: inherit;">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fahmid.dev@gmail.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                           fahmid.dev@gmail.com
                         </a>
                       </h5>
@@ -861,9 +685,7 @@
                   </div>
                   <div class="contact-info-block">
                     <div class="ci-icon">
-                       <i class="pe-7s-icon pe-7s-check"></i>
-<!--                      <i class="pe-7s-icon pe-7s-close-circle"></i>-->
-            
+                      <i class="pe-7s-icon pe-7s-check"></i>
                     </div>
                     <div class="ci-text">
                       <h5>Freelance Available</h5>
@@ -872,17 +694,14 @@
                   <div class="contact-info-block">
                     <div class="ci-icon">
                       <i class="pe-7s-icon pe-7s-check"></i>
-<!--                      <i class="pe-7s-icon pe-7s-close-circle"></i>-->
-
                     </div>
                     <div class="ci-text">
                       <h5>Seeking for a Job</h5>
                     </div>
                   </div>
-
                 </div>
 
-<!--Form Part Start-->
+                <!-- Form Part Start -->
                 <div class="col-sm-6 col-md-6 subpage-block">
                   <div class="block-title">
                     <h3>Contact Form</h3>
@@ -891,97 +710,34 @@
                     <div class="messages"></div>
                     <div class="controls">
                       <div class="form-group">
-                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Your Full Name" required="required" data-error="Name is required.">
+                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Your Full Name" required data-error="Name is required.">
                         <div class="form-control-border"></div>
                         <i class="form-control-icon fa fa-user"></i>
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="form-group">
-                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Your Email Address" required="required" data-error="Valid email is required.">
+                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Your Email Address" required data-error="Valid email is required.">
                         <div class="form-control-border"></div>
                         <i class="form-control-icon fa fa-envelope"></i>
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="form-group">
-                        <textarea id="form_message" name="message" class="form-control" placeholder="Message for me" rows="4" required="required" data-error="Please, leave me a message."></textarea>
+                        <textarea id="form_message" name="message" class="form-control" placeholder="Message for me" rows="4" required data-error="Please, leave me a message."></textarea>
                         <div class="form-control-border"></div>
                         <i class="form-control-icon fa fa-comment"></i>
                         <div class="help-block with-errors"></div>
                       </div>
 
-                      <!-- Random Math Problem Section -->
                       <div class="form-group">
                         <label id="math-problem"></label>
-                        <input type="text" id="math-answer" class="form-control" placeholder="Your answer" required="required" data-error="Please, solve the problem.">
+                        <input type="text" id="math-answer" class="form-control" placeholder="Your answer" required data-error="Please, solve the problem.">
                       </div>
 
                       <input type="submit" class="button btn-send" value="Send message">
                     </div>
                   </form>
                 </div>
-
-                <script>
-                  let correctAnswer;
-
-                  function generateMathProblem() {
-                    const num1 = Math.floor(Math.random() * 10) + 1; // Random number between 1-10
-                    const num2 = Math.floor(Math.random() * 10) + 1; // Random number between 1-10
-                    const operation = Math.random() < 0.5 ? '+' : '-'; // Randomly choose + or -
-
-                    correctAnswer = operation === '+' ? num1 + num2 : num1 - num2; // Calculate correct answer
-
-                    document.getElementById('math-problem').innerText = `What is ${num1} ${operation} ${num2}?`;
-                  }
-
-                  // Call function to generate a math problem on page load
-                  generateMathProblem();
-
-                  function sendEmail(event) {
-                    event.preventDefault();
-
-                    // Get form values
-                    var name = document.getElementById('form_name').value.trim();
-                    var email = document.getElementById('form_email').value.trim();
-                    var message = document.getElementById('form_message').value.trim();
-                    var userAnswer = parseInt(document.getElementById('math-answer').value.trim(), 10);
-
-                    // Validate inputs
-                    if (name.length < 8) {
-                      alert('Name must be at least 8 characters long.');
-                      return;
-                    }
-
-                    // Regular expression for basic email validation
-                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailPattern.test(email)) {
-                      alert('Please enter a valid email address.');
-                      return;
-                    }
-
-                    if (message.length < 8) {
-                      alert('Message must be at least 8 characters long.');
-                      return;
-                    }
-
-                    // Validate math answer
-                    if (userAnswer !== correctAnswer) {
-                      alert('Incorrect answer to the math problem. Please try again.');
-                      generateMathProblem(); // Generate a new problem if the answer is incorrect
-                      return;
-                    }
-
-                    // Prepare Gmail URL
-                    var mailtoLink = 'https://mail.google.com/mail/?view=cm&fs=1&to=fahmid.dev@gmail.com&su=Message from '
-                            + encodeURIComponent(name) + '&body=Name: ' + encodeURIComponent(name)
-                            + '%0AEmail: ' + encodeURIComponent(email)
-                            + '%0A%0AMessage: ' + encodeURIComponent(message);
-
-                    // Open Gmail compose window
-                    window.open(mailtoLink, '_blank');
-                  }
-                </script>
-<!--Form Part End-->
-
+                <!-- Form Part End -->
               </div>
             </section>
             <!-- End Contact Subpage -->
@@ -1003,6 +759,64 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.hoverdir.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      (function () {
+        // Contact form: random math check (spam protection)
+        let correctAnswer;
+
+        function generateMathProblem() {
+          const num1 = Math.floor(Math.random() * 10) + 1;
+          const num2 = Math.floor(Math.random() * 10) + 1;
+          const operation = Math.random() < 0.5 ? '+' : '-';
+          correctAnswer = operation === '+' ? num1 + num2 : num1 - num2;
+          const label = document.getElementById('math-problem');
+          if (label) label.innerText = `What is ${num1} ${operation} ${num2}?`;
+        }
+
+        generateMathProblem();
+
+        window.sendEmail = function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById('form_name').value.trim();
+          const email = document.getElementById('form_email').value.trim();
+          const message = document.getElementById('form_message').value.trim();
+          const userAnswer = parseInt(document.getElementById('math-answer').value.trim(), 10);
+
+          if (name.length < 3) {
+            alert('Please enter your full name.');
+            return;
+          }
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+
+          if (message.length < 8) {
+            alert('Message must be at least 8 characters long.');
+            return;
+          }
+
+          if (userAnswer !== correctAnswer) {
+            alert('Incorrect answer to the math problem. Please try again.');
+            generateMathProblem();
+            document.getElementById('math-answer').value = '';
+            return;
+          }
+
+          const mailtoLink = 'https://mail.google.com/mail/?view=cm&fs=1&to=fahmid.dev@gmail.com&su='
+            + encodeURIComponent('Message from ' + name)
+            + '&body=' + encodeURIComponent('Name: ' + name)
+            + encodeURIComponent('\nEmail: ' + email)
+            + encodeURIComponent('\n\nMessage: ' + message);
+
+          window.open(mailtoLink, '_blank', 'noopener,noreferrer');
+        };
+      })();
+    </script>
 
   </body>
 </html>
