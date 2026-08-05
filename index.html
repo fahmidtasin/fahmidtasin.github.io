@@ -727,8 +727,9 @@
                       </div>
 
                       <div class="form-group">
-                        <label id="math-problem"></label>
-                        <input type="text" id="math-answer" class="form-control" placeholder="Your answer" required data-error="Please, solve the problem.">
+                        <!-- ⚠️ Replace YOUR_RECAPTCHA_SITE_KEY with your real site key from
+                             https://www.google.com/recaptcha/admin (choose reCAPTCHA v2, "I'm not a robot" Checkbox) -->
+                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
                       </div>
 
                       <input type="submit" class="button btn-send" value="Send message">
@@ -819,25 +820,7 @@
         openModal('cv-modal');
       }
 
-      // ---- Contact form: math captcha + Formspree submit, result shown in a modal ----
       (function () {
-        let correctAnswer;
-
-        function generateMathProblem() {
-          const num1 = Math.floor(Math.random() * 10) + 1;
-          const num2 = Math.floor(Math.random() * 10) + 1;
-          const operation = Math.random() < 0.5 ? '+' : '-';
-          correctAnswer = operation === '+' ? num1 + num2 : num1 - num2;
-          const label = document.getElementById('math-problem');
-          if (label) label.innerText = `What is ${num1} ${operation} ${num2}?`;
-        }
-
-        generateMathProblem();
-
-        // ⚠️ Replace with your own Formspree endpoint:
-        // 1) Sign up free at https://formspree.io
-        // 2) Create a new form, verify your email
-        // 3) Copy the endpoint (looks like https://formspree.io/f/xxxxxxxx) and paste it below
         const FORM_ENDPOINT = 'https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID';
 
         window.sendEmail = async function (event) {
@@ -846,12 +829,10 @@
           const nameEl = document.getElementById('form_name');
           const emailEl = document.getElementById('form_email');
           const messageEl = document.getElementById('form_message');
-          const answerEl = document.getElementById('math-answer');
 
           const name = nameEl.value.trim();
           const email = emailEl.value.trim();
           const message = messageEl.value.trim();
-          const userAnswer = parseInt(answerEl.value.trim(), 10);
 
           if (name.length < 3) {
             alert('Please enter your full name.');
@@ -869,10 +850,10 @@
             return;
           }
 
-          if (userAnswer !== correctAnswer) {
-            alert('Incorrect answer to the math problem. Please try again.');
-            generateMathProblem();
-            answerEl.value = '';
+          // reCAPTCHA check
+          const recaptchaResponse = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
+          if (!recaptchaResponse) {
+            alert('Please verify that you are not a robot.');
             return;
           }
 
@@ -882,10 +863,13 @@
           openModal('contact-modal');
 
           try {
+            const formData = new FormData(document.getElementById('contact-form'));
+            formData.append('g-recaptcha-response', recaptchaResponse);
+
             const res = await fetch(FORM_ENDPOINT, {
               method: 'POST',
               headers: { Accept: 'application/json' },
-              body: new FormData(document.getElementById('contact-form'))
+              body: formData
             });
 
             if (res.ok) {
@@ -896,13 +880,14 @@
                 email +
                 '</strong> as soon as I can.</p></div>';
               document.getElementById('contact-form').reset();
-              generateMathProblem();
+              if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
             } else {
               throw new Error('Request failed');
             }
           } catch (err) {
             modalContent.innerHTML =
               '<div class="modal-status error"><i class="fa fa-exclamation-circle"></i><h3>Something went wrong</h3><p>Please email me directly at <a href="mailto:fahmid.dev@gmail.com">fahmid.dev@gmail.com</a>.</p></div>';
+            if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
           }
         };
       })();
