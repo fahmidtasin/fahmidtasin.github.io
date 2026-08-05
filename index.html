@@ -21,7 +21,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Preconnect to speed up third-party requests -->
-    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://formspree.io">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -34,8 +34,6 @@
 
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
   <body>
@@ -322,7 +320,7 @@
               <div class="row">
                 <div class="col-sm-12 col-md-12">
                   <div class="download-cv-block">
-                    <a class="button" target="_blank" rel="noopener noreferrer" href="CV/Fahmid_Shafath_Tasin_CV.pdf">View Personalized Resume</a>
+                    <a class="button" href="javascript:void(0)" onclick="openCvModal()">View Personalized Resume</a>
                   </div>
                 </div>
               </div>
@@ -760,9 +758,69 @@
     <script src="js/jquery.hoverdir.js"></script>
     <script src="js/main.js"></script>
 
+    <!-- CV Preview Modal -->
+    <div class="modal-overlay" id="cv-modal" aria-hidden="true">
+      <div class="modal-box modal-box-lg">
+        <button type="button" class="modal-close" onclick="closeModal('cv-modal')" aria-label="Close">&times;</button>
+        <h3 class="modal-title">Fahmid Shafath Tasin — Resume</h3>
+        <div class="modal-body">
+          <iframe id="cv-frame" class="cv-frame" title="Resume PDF preview"></iframe>
+        </div>
+        <div class="modal-actions">
+          <a class="button" href="CV/Fahmid_Shafath_Tasin_CV.pdf" download>Download PDF</a>
+        </div>
+      </div>
+    </div>
+    <!-- /CV Preview Modal -->
+
+    <!-- Contact Result Modal -->
+    <div class="modal-overlay" id="contact-modal" aria-hidden="true">
+      <div class="modal-box">
+        <button type="button" class="modal-close" onclick="closeModal('contact-modal')" aria-label="Close">&times;</button>
+        <div id="contact-modal-content"></div>
+      </div>
+    </div>
+    <!-- /Contact Result Modal -->
+
     <script>
+      // ---- Generic modal open/close helpers ----
+      function openModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
+        overlay.addEventListener('click', function (e) {
+          if (e.target === overlay) closeModal(overlay.id);
+        });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.modal-overlay.active').forEach(function (m) {
+            closeModal(m.id);
+          });
+        }
+      });
+
+      // ---- CV modal: load the PDF only the first time it's opened ----
+      function openCvModal() {
+        const frame = document.getElementById('cv-frame');
+        if (!frame.src) frame.src = 'CV/Fahmid_Shafath_Tasin_CV.pdf';
+        openModal('cv-modal');
+      }
+
+      // ---- Contact form: math captcha + Formspree submit, result shown in a modal ----
       (function () {
-        // Contact form: random math check (spam protection)
         let correctAnswer;
 
         function generateMathProblem() {
@@ -776,13 +834,24 @@
 
         generateMathProblem();
 
-        window.sendEmail = function (event) {
+        // ⚠️ Replace with your own Formspree endpoint:
+        // 1) Sign up free at https://formspree.io
+        // 2) Create a new form, verify your email
+        // 3) Copy the endpoint (looks like https://formspree.io/f/xxxxxxxx) and paste it below
+        const FORM_ENDPOINT = 'https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID';
+
+        window.sendEmail = async function (event) {
           event.preventDefault();
 
-          const name = document.getElementById('form_name').value.trim();
-          const email = document.getElementById('form_email').value.trim();
-          const message = document.getElementById('form_message').value.trim();
-          const userAnswer = parseInt(document.getElementById('math-answer').value.trim(), 10);
+          const nameEl = document.getElementById('form_name');
+          const emailEl = document.getElementById('form_email');
+          const messageEl = document.getElementById('form_message');
+          const answerEl = document.getElementById('math-answer');
+
+          const name = nameEl.value.trim();
+          const email = emailEl.value.trim();
+          const message = messageEl.value.trim();
+          const userAnswer = parseInt(answerEl.value.trim(), 10);
 
           if (name.length < 3) {
             alert('Please enter your full name.');
@@ -803,17 +872,38 @@
           if (userAnswer !== correctAnswer) {
             alert('Incorrect answer to the math problem. Please try again.');
             generateMathProblem();
-            document.getElementById('math-answer').value = '';
+            answerEl.value = '';
             return;
           }
 
-          const mailtoLink = 'https://mail.google.com/mail/?view=cm&fs=1&to=fahmid.dev@gmail.com&su='
-            + encodeURIComponent('Message from ' + name)
-            + '&body=' + encodeURIComponent('Name: ' + name)
-            + encodeURIComponent('\nEmail: ' + email)
-            + encodeURIComponent('\n\nMessage: ' + message);
+          const modalContent = document.getElementById('contact-modal-content');
+          modalContent.innerHTML =
+            '<div class="modal-status sending"><div class="spinner"></div><p>Sending your message&hellip;</p></div>';
+          openModal('contact-modal');
 
-          window.open(mailtoLink, '_blank', 'noopener,noreferrer');
+          try {
+            const res = await fetch(FORM_ENDPOINT, {
+              method: 'POST',
+              headers: { Accept: 'application/json' },
+              body: new FormData(document.getElementById('contact-form'))
+            });
+
+            if (res.ok) {
+              modalContent.innerHTML =
+                '<div class="modal-status success"><i class="fa fa-check-circle"></i><h3>Message Sent!</h3><p>Thanks, ' +
+                name.split(' ')[0] +
+                '. I\'ll reply to <strong>' +
+                email +
+                '</strong> as soon as I can.</p></div>';
+              document.getElementById('contact-form').reset();
+              generateMathProblem();
+            } else {
+              throw new Error('Request failed');
+            }
+          } catch (err) {
+            modalContent.innerHTML =
+              '<div class="modal-status error"><i class="fa fa-exclamation-circle"></i><h3>Something went wrong</h3><p>Please email me directly at <a href="mailto:fahmid.dev@gmail.com">fahmid.dev@gmail.com</a>.</p></div>';
+          }
         };
       })();
     </script>
