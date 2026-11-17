@@ -52,13 +52,16 @@
       <!-- Header -->
       <header id="site_header" class="header">
         <div class="my-photo">
-          <img src="images/profile-pic.jpg" alt="Fahmid Shafath Tasin" width="920" height="150">
+          <img src="images/profile-pic.jpg" alt="Fahmid Shafath Tasin">
           <div class="mask"></div>
         </div>
 
         <div class="site-title-block">
           <h1 class="site-title">Fahmid Shafath Tasin</h1>
-          <p class="site-description bg-success">Software Engineer | IT Operations & Support</p>
+          <p class="site-description">Software Engineer | IT Operations & Support</p>
+          <div class="profile-views-badge" title="Live Profile Views">
+            <i class="fa fa-eye"></i> <span id="profile-view-count">1,420</span> Views
+          </div>
         </div>
 
         <a class="menu-toggle mobile-visible" href="#" aria-label="Toggle menu">
@@ -81,6 +84,9 @@
               <li>
                 <a class="pt-trigger" href="#resume" data-animation="59" data-goto="2">Resume</a>
               </li>
+              <!-- <li>
+                <a class="pt-trigger" href="#portfolio" data-animation="60" data-goto="3">Portfolio</a>
+              </li> -->
               <li>
                 <a class="pt-trigger" href="#contact" data-animation="58" data-goto="5">Contact</a>
               </li>
@@ -351,144 +357,78 @@
                     <a class="filter btn btn-sm btn-link active" data-group="all">All</a>
                   </li>
                   <li>
-                    <a class="filter btn btn-sm btn-link" data-group="media">Media</a>
+                    <a class="filter btn btn-sm btn-link" data-group="web">Web & Full-Stack</a>
                   </li>
                   <li>
-                    <a class="filter btn btn-sm btn-link" data-group="illustration">Illustration</a>
+                    <a class="filter btn btn-sm btn-link" data-group="backend">ERP & Backend</a>
                   </li>
                   <li>
-                    <a class="filter btn btn-sm btn-link" data-group="video">Video</a>
+                    <a class="filter btn btn-sm btn-link" data-group="it">IT Operations</a>
                   </li>
                 </ul>
 
                 <div id="portfolio_grid" class="portfolio-grid portfolio-masonry masonry-grid-3">
-                  <figure class="item" data-groups='["all", "media"]'>
-                    <a class="ajax-page-load" href="portfolio-1.html">
-                      <img src="images/portfolio/1.jpg" alt="Project Name" loading="lazy">
+                  <figure class="item" data-groups='["all", "backend"]'>
+                    <a class="lightbox" href="images/portfolio/1.jpg" title="Enterprise ERP Management System — Developed & maintained ERP modules with PHP, MySQL, and automated reporting.">
+                      <img src="images/portfolio/1.jpg" alt="Enterprise ERP Management System" loading="lazy">
                       <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Media</small>
-                        <i class="fa fa-file-text-o"></i>
+                        <h5 class="name">Enterprise ERP System</h5>
+                        <small>PHP &bull; MySQL &bull; ERP</small>
+                        <i class="fa fa-database"></i>
                       </div>
                     </a>
                   </figure>
 
-                  <figure class="item" data-groups='["all", "video"]'>
-                    <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Praesent Dolor Ex" class="lightbox mfp-iframe" rel="noopener noreferrer">
-                      <img src="images/portfolio/2.jpg" alt="Project Name" loading="lazy">
+                  <figure class="item" data-groups='["all", "web"]'>
+                    <a class="lightbox" href="images/portfolio/2.jpg" title="E-Commerce Web Platform — Modern online shopping portal with cart, product catalog, and secure checkout.">
+                      <img src="images/portfolio/2.jpg" alt="E-Commerce Web Platform" loading="lazy">
                       <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Video</small>
-                        <i class="fa fa-video-camera"></i>
+                        <h5 class="name">E-Commerce Platform</h5>
+                        <small>Laravel &bull; React &bull; MySQL</small>
+                        <i class="fa fa-shopping-cart"></i>
                       </div>
                     </a>
                   </figure>
 
-                  <figure class="item" data-groups='["all","illustration"]'>
-                    <a href="images/portfolio/3.jpg" class="lightbox" title="Duis Eu Eros Viverra">
-                      <img src="images/portfolio/3.jpg" alt="Project Name" loading="lazy">
+                  <figure class="item" data-groups='["all", "web"]'>
+                    <a class="lightbox" href="images/portfolio/3.jpg" title="Corporate Portal & Web App — Full-stack web application with responsive UI, role-based auth, and API integrations.">
+                      <img src="images/portfolio/3.jpg" alt="Corporate Portal & Web App" loading="lazy">
                       <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Illustration</small>
-                        <i class="fa fa-image"></i>
+                        <h5 class="name">Corporate Web Portal</h5>
+                        <small>Ruby on Rails &bull; PHP</small>
+                        <i class="fa fa-laptop"></i>
                       </div>
                     </a>
                   </figure>
 
-                  <figure class="item" data-groups='["all", "media"]'>
-                    <a class="ajax-page-load" href="portfolio-1.html">
-                      <img src="images/portfolio/4.jpg" alt="Project Name" loading="lazy">
+                  <figure class="item" data-groups='["all", "it"]'>
+                    <a class="lightbox" href="images/portfolio/4.jpg" title="Network & IT Infrastructure — Network administration, system monitoring, backups, and security management.">
+                      <img src="images/portfolio/4.jpg" alt="Network & IT Infrastructure" loading="lazy">
                       <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Media</small>
-                        <i class="fa fa-file-text-o"></i>
+                        <h5 class="name">IT & Network Operations</h5>
+                        <small>IT Support &bull; Network &bull; Security</small>
+                        <i class="fa fa-server"></i>
                       </div>
                     </a>
                   </figure>
 
-                  <figure class="item" data-groups='["all", "illustration"]'>
-                    <a href="images/portfolio/5.jpg" class="lightbox" title="Aliquam Condimentum Magna Rhoncus">
-                      <img src="images/portfolio/5.jpg" alt="Project Name" loading="lazy">
+                  <figure class="item" data-groups='["all", "backend"]'>
+                    <a class="lightbox" href="images/portfolio/5.jpg" title="RESTful API & Database Architecture — Scalable backend endpoints with token authentication, caching, and SQL/NoSQL databases.">
+                      <img src="images/portfolio/5.jpg" alt="RESTful API Architecture" loading="lazy">
                       <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Illustration</small>
-                        <i class="fa fa-image"></i>
+                        <h5 class="name">RESTful API Services</h5>
+                        <small>PHP &bull; REST API &bull; MongoDB</small>
+                        <i class="fa fa-code"></i>
                       </div>
                     </a>
                   </figure>
 
-                  <figure class="item" data-groups='["all", "media"]'>
-                    <a class="ajax-page-load" href="portfolio-1.html">
-                      <img src="images/portfolio/6.jpg" alt="Project Name" loading="lazy">
+                  <figure class="item" data-groups='["all", "it", "web"]'>
+                    <a class="lightbox" href="images/portfolio/6.jpg" title="Document & Workflow Portal — Internal management tool for LC, billing statements, and statements tracking.">
+                      <img src="images/portfolio/6.jpg" alt="Document & Workflow Portal" loading="lazy">
                       <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Media</small>
-                        <i class="fa fa-file-text-o"></i>
-                      </div>
-                    </a>
-                  </figure>
-
-                  <figure class="item" data-groups='["all", "video"]'>
-                    <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Nulla Facilisi" class="lightbox mfp-iframe" rel="noopener noreferrer">
-                      <img src="images/portfolio/7.jpg" alt="Project Name" loading="lazy">
-                      <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Video</small>
-                        <i class="fa fa-video-camera"></i>
-                      </div>
-                    </a>
-                  </figure>
-
-                  <figure class="item" data-groups='["all",  "media"]'>
-                    <a class="ajax-page-load" href="portfolio-1.html">
-                      <img src="images/portfolio/8.jpg" alt="Project Name" loading="lazy">
-                      <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Media</small>
-                        <i class="fa fa-file-text-o"></i>
-                      </div>
-                    </a>
-                  </figure>
-
-                  <figure class="item" data-groups='["all","illustration"]'>
-                    <a href="images/portfolio/9.jpg" class="lightbox" title="Mauris Neque Dolor">
-                      <img src="images/portfolio/9.jpg" alt="Project Name" loading="lazy">
-                      <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Illustration</small>
-                        <i class="fa fa-image"></i>
-                      </div>
-                    </a>
-                  </figure>
-
-                  <figure class="item" data-groups='["all", "video"]'>
-                    <a href="https://player.vimeo.com/video/97102654?autoplay=1" title="Donec Lectus Arcu" class="lightbox mfp-iframe" rel="noopener noreferrer">
-                      <img src="images/portfolio/10.jpg" alt="Project Name" loading="lazy">
-                      <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Video</small>
-                        <i class="fa fa-video-camera"></i>
-                      </div>
-                    </a>
-                  </figure>
-
-                  <figure class="item" data-groups='["all","illustration"]'>
-                    <a href="images/portfolio/11.jpg" class="lightbox" title="Duis Eu Eros Viverra">
-                      <img src="images/portfolio/11.jpg" alt="Project Name" loading="lazy">
-                      <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Illustration</small>
-                        <i class="fa fa-image"></i>
-                      </div>
-                    </a>
-                  </figure>
-
-                  <figure class="item" data-groups='["all","media"]'>
-                    <a class="ajax-page-load" href="portfolio-1.html">
-                      <img src="images/portfolio/12.jpg" alt="Project Name" loading="lazy">
-                      <div>
-                        <h5 class="name">Project Name</h5>
-                        <small>Media</small>
+                        <h5 class="name">Documentation Portal</h5>
+                        <small>JavaScript &bull; Bootstrap &bull; PHP</small>
                         <i class="fa fa-file-text-o"></i>
                       </div>
                     </a>
@@ -753,8 +693,9 @@
       <!-- /Main Content -->
 
       <!-- Footer -->
-      <footer class="site-footer" style="position:fixed;bottom:0;right:0;padding:8px 18px;font-size:12px;color:#a3a8b8;z-index:10;">
-        &copy; <script>document.write(new Date().getFullYear())</script> Fahmid Shafath Tasin. All rights reserved.
+      <footer class="site-footer">
+        <span>&copy; <script>document.write(new Date().getFullYear())</script> Fahmid Shafath Tasin. All rights reserved.</span>
+        <span class="footer-views"><i class="fa fa-eye"></i> <span id="footer-view-count">1,420</span> views</span>
       </footer>
       <!-- /Footer -->
     </div>
@@ -832,6 +773,12 @@
       }
 
       (function () {
+        function escapeHtml(str) {
+          var div = document.createElement('div');
+          div.textContent = str;
+          return div.innerHTML;
+        }
+
         window.sendEmail = async function (event) {
           event.preventDefault();
 
@@ -859,28 +806,51 @@
             return;
           }
 
-          // Compose and open mailto link as a reliable fallback
-          var subject = encodeURIComponent('Portfolio Contact from ' + name);
-          var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
-          window.open('mailto:fahmid.dev@gmail.com?subject=' + subject + '&body=' + body, '_blank');
-
           var modalContent = document.getElementById('contact-modal-content');
-          modalContent.textContent = '';
-          var statusDiv = document.createElement('div');
-          statusDiv.className = 'modal-status success';
-          var icon = document.createElement('i');
-          icon.className = 'fa fa-check-circle';
-          var h3 = document.createElement('h3');
-          h3.textContent = 'Opening Email Client!';
-          var p = document.createElement('p');
-          p.textContent = 'Your default email app should open with the message pre-filled. If it doesn\'t, please email fahmid.dev@gmail.com directly.';
-          statusDiv.appendChild(icon);
-          statusDiv.appendChild(h3);
-          statusDiv.appendChild(p);
-          modalContent.appendChild(statusDiv);
+          modalContent.innerHTML =
+            '<div class="modal-status sending"><div class="spinner"></div><p>Sending your message&hellip;</p></div>';
           openModal('contact-modal');
 
-          document.getElementById('contact-form').reset();
+          try {
+            var response = await fetch('https://formsubmit.co/ajax/fahmid.dev@gmail.com', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify({
+                name: name,
+                email: email,
+                message: message,
+                _subject: 'Portfolio Contact from ' + name
+              })
+            });
+
+            var result = await response.json();
+            if (response.ok && (result.success === 'true' || result.success === true)) {
+              modalContent.innerHTML =
+                '<div class="modal-status success">' +
+                '<i class="fa fa-check-circle" style="color:#22c55e;"></i>' +
+                '<h3>Message Sent Successfully!</h3>' +
+                '<p>Thank you, <strong>' + escapeHtml(name) + '</strong>! Your message has been sent directly to Fahmid. He will reply to <strong>' + escapeHtml(email) + '</strong> shortly.</p>' +
+                '</div>';
+              document.getElementById('contact-form').reset();
+            } else {
+              throw new Error('Fallback to mailto');
+            }
+          } catch (err) {
+            var subject = encodeURIComponent('Portfolio Contact from ' + name);
+            var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+            window.open('mailto:fahmid.dev@gmail.com?subject=' + subject + '&body=' + body, '_blank');
+
+            modalContent.innerHTML =
+              '<div class="modal-status success">' +
+              '<i class="fa fa-envelope-o" style="color:var(--primary);font-size:48px;"></i>' +
+              '<h3>Email Ready</h3>' +
+              '<p>Your email app was opened with the message. You can also write directly to <a href="mailto:fahmid.dev@gmail.com" style="color:var(--primary);font-weight:600;">fahmid.dev@gmail.com</a>.</p>' +
+              '</div>';
+            document.getElementById('contact-form').reset();
+          }
         };
       })();
     </script>
@@ -891,6 +861,47 @@
     </button>
 
     <script>
+      // ---- Profile Views Counter ----
+      (function () {
+        var BASE_COUNT = 1420;
+        var STORAGE_KEY = 'fahmid_profile_views';
+        var SESSION_KEY = 'fahmid_visited_session';
+
+        function renderCount(num) {
+          var formatted = Number(num).toLocaleString();
+          var badgeEl = document.getElementById('profile-view-count');
+          var footerEl = document.getElementById('footer-view-count');
+          if (badgeEl) badgeEl.textContent = formatted;
+          if (footerEl) footerEl.textContent = formatted;
+        }
+
+        var current = parseInt(localStorage.getItem(STORAGE_KEY) || BASE_COUNT, 10);
+        if (isNaN(current) || current < BASE_COUNT) {
+          current = BASE_COUNT;
+        }
+
+        if (!sessionStorage.getItem(SESSION_KEY)) {
+          sessionStorage.setItem(SESSION_KEY, '1');
+          current += 1;
+          localStorage.setItem(STORAGE_KEY, current);
+        }
+
+        renderCount(current);
+
+        try {
+          fetch('https://api.counterapi.dev/v1/fahmidtasin_portfolio/views/up', { mode: 'cors' })
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+              if (data && typeof data.count === 'number') {
+                var total = BASE_COUNT + data.count;
+                localStorage.setItem(STORAGE_KEY, total);
+                renderCount(total);
+              }
+            })
+            .catch(function () { /* Silently use local count */ });
+        } catch (e) {}
+      })();
+
       // Scroll-to-top button
       (function () {
         var btn = document.getElementById('scrollTopBtn');
@@ -930,7 +941,6 @@
             observer.observe(el);
           });
         } else {
-          // Fallback: show everything
           elements.forEach(function (el) {
             el.classList.add('visible');
           });
@@ -946,7 +956,6 @@
             li.classList.add('active');
           });
         });
-        // Set first nav item active on load
         if (navLinks.length > 0) navLinks[0].classList.add('active');
       })();
     </script>
