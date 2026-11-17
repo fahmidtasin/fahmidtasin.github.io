@@ -865,7 +865,6 @@
       (function () {
         var BASE_COUNT = 1420;
         var STORAGE_KEY = 'fahmid_profile_views';
-        var SESSION_KEY = 'fahmid_visited_session';
 
         function renderCount(num) {
           var formatted = Number(num).toLocaleString();
@@ -875,30 +874,32 @@
           if (footerEl) footerEl.textContent = formatted;
         }
 
-        var current = parseInt(localStorage.getItem(STORAGE_KEY) || BASE_COUNT, 10);
+        // 1. Read existing count or start from BASE_COUNT
+        var current = parseInt(localStorage.getItem(STORAGE_KEY), 10);
         if (isNaN(current) || current < BASE_COUNT) {
           current = BASE_COUNT;
         }
 
-        if (!sessionStorage.getItem(SESSION_KEY)) {
-          sessionStorage.setItem(SESSION_KEY, '1');
-          current += 1;
-          localStorage.setItem(STORAGE_KEY, current);
-        }
-
+        // 2. Increment immediately on each visit/reload
+        current += 1;
+        localStorage.setItem(STORAGE_KEY, current);
         renderCount(current);
 
+        // 3. Sync with online hit counter API
         try {
-          fetch('https://api.counterapi.dev/v1/fahmidtasin_portfolio/views/up', { mode: 'cors' })
+          fetch('https://countapi.mileshilliard.com/api/v1/hit/fahmidtasin_github_io_visits')
             .then(function (res) { return res.json(); })
             .then(function (data) {
-              if (data && typeof data.count === 'number') {
-                var total = BASE_COUNT + data.count;
-                localStorage.setItem(STORAGE_KEY, total);
-                renderCount(total);
+              if (data && typeof data.value === 'number') {
+                var remoteTotal = BASE_COUNT + data.value;
+                var finalCount = Math.max(current, remoteTotal);
+                localStorage.setItem(STORAGE_KEY, finalCount);
+                renderCount(finalCount);
               }
             })
-            .catch(function () { /* Silently use local count */ });
+            .catch(function () {
+              // Gracefully continues with local count
+            });
         } catch (e) {}
       })();
 
