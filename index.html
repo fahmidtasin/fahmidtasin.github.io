@@ -861,10 +861,11 @@
     </button>
 
     <script>
-      // ---- Profile Views Counter ----
+      // ---- Profile Views Counter (Unique Session Tracking) ----
       (function () {
         var BASE_COUNT = 1420;
         var STORAGE_KEY = 'fahmid_profile_views';
+        var SESSION_KEY = 'fahmid_view_tracked';
 
         function renderCount(num) {
           var formatted = Number(num).toLocaleString();
@@ -880,14 +881,23 @@
           current = BASE_COUNT;
         }
 
-        // 2. Increment immediately on each visit/reload
-        current += 1;
-        localStorage.setItem(STORAGE_KEY, current);
+        // 2. Track unique visitor session: only increment if this is a new session
+        var isNewSession = !sessionStorage.getItem(SESSION_KEY);
+        if (isNewSession) {
+          sessionStorage.setItem(SESSION_KEY, '1');
+          current += 1;
+          localStorage.setItem(STORAGE_KEY, current);
+        }
+
         renderCount(current);
 
-        // 3. Sync with online hit counter API
+        // 3. Online sync: If new session, call /hit/ (increment), else call /get/ (read-only)
+        var endpoint = isNewSession
+          ? 'https://countapi.mileshilliard.com/api/v1/hit/fahmidtasin_github_io_visits'
+          : 'https://countapi.mileshilliard.com/api/v1/get/fahmidtasin_github_io_visits';
+
         try {
-          fetch('https://countapi.mileshilliard.com/api/v1/hit/fahmidtasin_github_io_visits')
+          fetch(endpoint)
             .then(function (res) { return res.json(); })
             .then(function (data) {
               if (data && typeof data.value === 'number') {
