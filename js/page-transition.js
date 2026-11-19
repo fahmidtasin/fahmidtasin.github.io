@@ -77,21 +77,23 @@ var PageTransitions = (function ($) {
         });
 
         window.onhashchange = function(event) {
-            if(location.hash) {
-                $(menu+' li').removeClass('active');
-                var menuLink = $(menu+' a[href*="'+location.hash.split('/')[0]+'"]'),
-                    navLink = menuLink['0'];
-                navLink = $(navLink.parentNode);
-                navLink.addClass('active');
+            if(location.hash && location.hash !== '#' && location.hash !== '#!') {
+                var hashId = location.hash.split('/')[0];
+                var menuLink = $(menu+' a[href*="'+hashId+'"]');
+                if (menuLink.length && menuLink['0']) {
+                    $(menu+' li').removeClass('active');
+                    var navLink = $(menuLink['0'].parentNode);
+                    navLink.addClass('active');
 
-                Animate(menuLink);
+                    Animate(menuLink);
 
-                $('.pt-wrapper').animate({scrollTop:0},300);
+                    $('.pt-wrapper').animate({scrollTop:0},300);
 
-                $('#page-ajax-loaded').addClass('fadeOutLeft');
-                $('#page-ajax-loaded > div').detach();
+                    $('#page-ajax-loaded').addClass('fadeOutLeft');
+                    $('#page-ajax-loaded > div').detach();
 
-                ajaxLoader();
+                    ajaxLoader();
+                }
             }
         };
 
